@@ -32,7 +32,7 @@ async function readFiles() {
 
 async function writeFile() {
     const data = await readFiles();
-    const strData = JSON.stringify(data)
+    const strData = JSON.stringify(data, null, 2)
     const newData = strData.split(`\r\n`);
     fs.writeFile("./files/result.json",`${newData}`,function(err) {
         if(err) log.magenta(err);
